@@ -1,7 +1,7 @@
 ---
 AWSTemplateFormatVersion: "2010-09-09"
 
-Description: Configures AWS resources for creating AMIs from OVAs
+Description: Configures AWS resources for testing EC2 IOPS
 
 Parameters:
   InstanceType:
