@@ -1,0 +1,22 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: Configures AWS resources for creating AMIs from OVAs
+
+Parameters:
+  InstanceType:
+    Description: Instance type
+    Type: String
+  AMI:
+    Description: AMI
+    Type: String
+  KeyName:
+    Description: Key name
+    Type: AWS::EC2::KeyPair::KeyName
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref AMI
+      KeyName: !Ref KeyName
