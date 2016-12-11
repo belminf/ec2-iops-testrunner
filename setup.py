@@ -7,7 +7,8 @@ from botocore.exceptions import ClientError
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('stackname', metavar='STACK_NAME', help='CloudFormation stack name')
-parser.add_argument('instance_type', metavar='INSTANCE_TYPE', help='Instance type (e.g. r3.8xlarge)')
+parser.add_argument('instance_type', metavar='INSTANCE_TYPE', help='Instance type (e.g., r3.8xlarge)')
+parser.add_argument('zone', metavar='AVAILABILITY_ZONE', help='Availability zone (e.g., us-east-1a)')
 parser.add_argument('ami', metavar='AMI', help='AMI image to use')
 parser.add_argument('key_name', metavar='KEY_NAME', help='Name of EC2 key pair')
 parser.add_argument('--force', action='store_true', help='Peform a stack update if stack exists')
@@ -33,6 +34,10 @@ stack_params = [
     {
         'ParameterKey': 'KeyName',
         'ParameterValue': args.key_name,
+    },
+    {
+        'ParameterKey': 'Zone',
+        'ParameterValue': args.zone,
     },
 ]
 
