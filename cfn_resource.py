@@ -23,6 +23,7 @@ Event example
 }
 """
 
+
 def wrap_user_handler(func, base_response=None):
     def wrapper_func(event, context):
         response = {
@@ -69,6 +70,7 @@ def wrap_user_handler(func, base_response=None):
             logger.error("Failed to reach the server - %s" % e.reason)
 
     return wrapper_func
+
 
 class Resource(object):
     _dispatch = None
