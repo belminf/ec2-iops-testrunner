@@ -1,0 +1,11 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: Configures CloudFormation custom Lambda-based resource
+
+Resources:
+
+  S3BucketLambda:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: BucketOwnerFullControl
